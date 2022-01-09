@@ -40,6 +40,10 @@
   object-fit: cover;
 }
 
+.sidebar__top > h2 {
+  font-size: 20px;
+}
+
 .sidebar__stat {
   margin-top: 10px;
   display: flex;
