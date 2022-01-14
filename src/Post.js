@@ -1,3 +1,5 @@
+import React, { forwardRef } from 'react';
+
 import { Avatar } from '@material-ui/core';
 import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
 import ChatOutlinedIcon from '@material-ui/icons/ChatOutlined';
@@ -6,11 +8,11 @@ import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 import './Post.css';
 import InputOption from './InputOption';
 
-function Post({ name, description, message, photoUrl }) {
+const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {
   return (
-    <div className='post'>
+    <div ref={ref} className='post'>
       <div className='post__header'>
-        <Avatar src='https://media-exp1.licdn.com/dms/image/C4D03AQFuYg0IP7pDSw/profile-displayphoto-shrink_800_800/0/1610912942072?e=1646870400&v=beta&t=lmxaCtsHky89M1b9cmCX8Ywxjs7_0dXO8tGEZQCkr6w' />
+        <Avatar src={photoUrl}>{name[0]}</Avatar>
         <div className='post__info'>
           <h2>{name}</h2>
           <p>{description}</p>
@@ -29,6 +31,6 @@ function Post({ name, description, message, photoUrl }) {
       </div>
     </div>
   );
-}
+});
 
 export default Post;

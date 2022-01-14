@@ -1,7 +1,11 @@
 import { Avatar } from '@material-ui/core';
 import './Sidebar.css';
+import { useSelector } from 'react-redux';
+import { selectUser } from './features/userSlice';
 
 function Sidebar() {
+  const user = useSelector(selectUser);
+
   const recentItem = (topic) => (
     <div className='sidebar__recentItem'>
       <span className='sidebar__hash'>#</span>
@@ -16,12 +20,9 @@ function Sidebar() {
           src='https://media-exp1.licdn.com/dms/image/C4D16AQHjtyVa6AX0YA/profile-displaybackgroundimage-shrink_350_1400/0/1610790933152?e=1647475200&v=beta&t=Zgm0O4gR0CIfv5rlcbGNcq43hEqclcB9pNxmDQvjJeA'
           alt=''
         />
-        <Avatar
-          className='sidebar__avatar'
-          src='https://media-exp1.licdn.com/dms/image/C4D03AQFuYg0IP7pDSw/profile-displayphoto-shrink_800_800/0/1610912942072?e=1646870400&v=beta&t=lmxaCtsHky89M1b9cmCX8Ywxjs7_0dXO8tGEZQCkr6w'
-        />
-        <h2>Gwenaël Magnenat</h2>
-        <h4>Web developer chez vingtneuf degres sàrl</h4>
+        <Avatar className='sidebar__avatar' src={user.photoUrl} />
+        <h2>{user.displayName}</h2>
+        <h4>{user.email}</h4>
       </div>
 
       <div className='sidebar__stats'>
