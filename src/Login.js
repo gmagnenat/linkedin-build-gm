@@ -19,7 +19,20 @@ function Login() {
   const loginToApp = (e) => {
     e.preventDefault();
 
-    console.log('sign in the user');
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userAuth) => {
+        dispatch(
+          login({
+            email: userAuth.user.email,
+            uid: userAuth.user.uid,
+            displayName: userAuth.user.display,
+            photoUrl: userAuth.user.photoURL,
+          })
+        );
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
 
   const register = () => {
@@ -30,25 +43,28 @@ function Login() {
     console.log('register the user');
 
     createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        updateProfile(userCredential, {
-          displayName: name,
-          photoURL: profilePic,
-        }).then(() =>
-          dispatch(
-            login({
-              email: userCredential.user.email,
-              uid: userCredential.user.uid,
-              displayName: name,
-              photoURL: profilePic,
-            })
+      .then((userAuth) => {
+        updateProfile(userAuth.user, {
+          displayName: 'honolulu',
+          photoURL:
+            'https://pbs.twimg.com/profile_images/436088663445753856/aU9k6GZC_400x400.jpeg',
+        })
+          .then(
+            dispatch(
+              login({
+                email: userAuth.user.email,
+                uid: userAuth.user.uid,
+                displayName: name,
+                photoUrl: profilePic,
+              })
+            )
           )
-        );
+          .catch((error) => {
+            console.log('user not updated');
+          });
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+      .catch((err) => {
+        alert(err);
       });
   };
 
