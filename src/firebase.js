@@ -12,7 +12,14 @@ import {
   onSnapshot,
   query,
 } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+} from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDB1ceomopUVFvxiFwb0P5X49CmLTYCFW4',
@@ -43,4 +50,9 @@ export {
   limit,
   onSnapshot,
   query,
+  createUserWithEmailAndPassword,
+  updateProfile,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
 };
