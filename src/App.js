@@ -10,7 +10,6 @@ function App() {
       {/* Header */}
       <Header />
 
-      {/* App Body */}
       <div className='app__body'>
         <Sidebar />
         <Feed />

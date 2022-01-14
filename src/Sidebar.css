@@ -9,11 +9,15 @@
 
 .sidebar__avatar {
   margin-bottom: 10px;
+  border: 2px solid white;
 }
 
 .sidebar__top > h4 {
   color: gray;
   font-size: 12px;
+  margin-top: 10px;
+  width: 70%;
+  font-weight: normal;
 }
 
 .sidebar__top > h2 {
@@ -24,12 +28,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid lightgray;
-  border-bottom: 0;
+  border-bottom: 1px solid lightgray;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background-color: white;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .sidebar__top > img {
