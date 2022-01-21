@@ -42,6 +42,7 @@ function Header() {
           title={user?.email[0]}
           onClick={logoutOfApp}
         />
+        <button></button>
       </div>
     </div>
   );
