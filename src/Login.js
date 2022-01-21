@@ -18,23 +18,9 @@ function Login() {
 
 	const loginToApp = (e) => {
 		e.preventDefault();
-
-		signInWithEmailAndPassword(auth, email, password)
-			// Dispatch here is not necessary. The user is logged in and get dispatched to the login action
-			// by the useEffect hook present on App.js
-			// .then((userAuth) => {
-			//   dispatch(
-			//     login({
-			//       email: userAuth.user.email,
-			//       uid: userAuth.user.uid,
-			//       displayName: userAuth.user.display,
-			//       photoUrl: userAuth.user.photoURL,
-			//     })
-			//   );
-			// })
-			.catch((err) => {
-				alert(err);
-			});
+		signInWithEmailAndPassword(auth, email, password).catch((err) => {
+			alert(err);
+		});
 	};
 
 	const register = () => {
