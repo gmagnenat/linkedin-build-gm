@@ -24,7 +24,7 @@ function Header() {
 	return (
 		<div className="header">
 			<div className="header__left">
-				<img src="linkedin_logo.svg" alt="" />
+				<img src="linkedin_logo.png" alt="" />
 
 				<div className="header__search">
 					<SearchIcon />
