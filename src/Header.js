@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { auth } from './firebase';
 import { logout, selectUser } from './features/userSlice';
 import { Avatar } from '@material-ui/core';
+import { ReactComponent as Logo } from './assets/Linkedin_logo.svg';
 
 function Header() {
 	const dispatch = useDispatch();
@@ -24,10 +25,7 @@ function Header() {
 	return (
 		<div className="header">
 			<div className="header__left">
-				<img
-					src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-					alt=""
-				/>
+				<Logo />
 
 				<div className="header__search">
 					<SearchIcon />

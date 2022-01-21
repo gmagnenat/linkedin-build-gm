@@ -8,6 +8,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { login } from './features/userSlice';
 import './Login.css';
+import { ReactComponent as LogoText } from './assets/linkedin_logo_large.svg';
 
 function Login() {
 	const [email, setEmail] = useState('');
@@ -58,10 +59,7 @@ function Login() {
 	return (
 		<div>
 			<div className="login">
-				<img
-					src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/2560px-LinkedIn_Logo.svg.png"
-					alt=""
-				/>
+				<LogoText />
 				<form>
 					<input
 						value={name}
