@@ -58,7 +58,10 @@ function Login() {
 	return (
 		<div>
 			<div className="login">
-				<img src="Linkedin_Logo_text.png" alt="" />
+				<img
+					src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/2560px-LinkedIn_Logo.svg.png"
+					alt=""
+				/>
 				<form>
 					<input
 						value={name}
